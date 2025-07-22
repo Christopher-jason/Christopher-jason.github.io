@@ -4687,3 +4687,57 @@ input, select, textarea {
 		}
 
 	}
+
+/* Fade-in and slide-up animation for project cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.posts article {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.posts article:nth-child(1) { animation-delay: 0.1s; }
+.posts article:nth-child(2) { animation-delay: 0.2s; }
+.posts article:nth-child(3) { animation-delay: 0.3s; }
+.posts article:nth-child(4) { animation-delay: 0.4s; }
+.posts article:nth-child(5) { animation-delay: 0.5s; }
+.posts article:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hover effect for cards and images */
+.posts article,
+.posts article .image img {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+.posts article:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.posts article .image img:hover {
+  transform: scale(1.05);
+}
+
+/* Intro animation */
+@keyframes introFadeIn {
+  from { opacity: 0; transform: translateY(-30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+#intro h1, #intro p, #intro .actions {
+  opacity: 0;
+  animation: introFadeIn 1s ease forwards;
+}
+
+#intro h1 { animation-delay: 0.1s; }
+#intro p { animation-delay: 0.3s; }
+#intro .actions { animation-delay: 0.5s; }
